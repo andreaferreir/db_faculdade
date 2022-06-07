@@ -42,6 +42,7 @@ CREATE TABLE IF NOT EXISTS turma(
      fk_cod_curso INTEGER(4),
      PRIMARY KEY (cod_turma)
      );
+      
           
           
 USE db_faculdade;
