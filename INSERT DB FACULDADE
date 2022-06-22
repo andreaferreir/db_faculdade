@@ -1,1 +1,438 @@
 
+
+
+
+USE db_faculdade3;
+INSERT INTO tipo_telefone
+(tipo_telefone)
+VALUES
+('resid'),
+('cel'),
+('comer');
+SELECT * FROM tipo_telefone;
+
+
+USE db_faculdade3;
+INSERT INTO departamento
+(nome_departamento)
+VALUES
+('ciencias humanas'),
+('Matematica'),
+('Biologicas'),
+('Estagio'),
+('Tec da informacao');
+select*from departamento;
+
+USE db_faculdade3;
+INSERT INTO tipo_logradouro
+(cod_tipo_logradouro, tipo_logradouro)
+VALUES
+('1','Rua'),
+('2','Avenida'),
+('3','Alameda'),
+('4','Chacara'),
+('5','Condominio'),
+('6','Edificio');
+SELECT *FROM tipo_logradouro;
+
+
+Use db_faculdade3;
+ INSERT INTO curso
+ (cod_curso, nome_curso, fk_cod_departamento)
+ VALUES
+ ('1','Eng de Software','5'),
+ ('2','Analise de sistemas', '5'),
+ ('3','Biologia' , '3'),
+ ('4','Historia','1'),
+ ('5','Matematica','2'),
+ ('6','Eng Eletrica','5'),
+ ('7','Psicologia','3'),
+ ('8','Inglês','1'),
+ ('9','Artes','4'),
+ ('10', 'Educ Fisica','1');
+ 
+SELECT *FROM curso;
+
+
+USE db_faculdade3;
+ INSERT INTO turma
+ (periodo, num_alunos, dt_inicio, dt_fim, fk_cod_curso)
+ VALUES
+ ('vesp', '2', '2022-01-05', '2022-11-08', '1'),
+ ('Mat', '3', '2020-05-06', '2021-06-10','2'),
+ ('Not', '1', '2022-12-15', '2023-01-05','4'),
+ ('Mat', '4', '2018-02-01', '2019-12-30', '6'),
+ ('Vesp', '1', '2017-06-15', '2017-06-28', '7'),
+ ('Not', '3', '2020-05-05', '2020-05-17', '9'),
+ ('Mat', '4', '2015-03-27', '2017-04-27' , '10'),
+ ('Not', '2', '2021-09-03', '2023-05-11','1');
+ 
+ SELECT*FROM turma;
+
+
+ USE db_faculdade3;
+INSERT into endereco
+(cod_endereco,nome_rua, numero_rua, complemento, CEP,fk_cod_tipo_logradouro)
+VALUES
+('1', 'Quadra', '300', 'Rua luna', '72682856' ,'1'),
+('2','Quadra', '115', 'Avenida lagoa', '15235885','2'),
+('3', 'Quadra', '101', 'Alameda palmares', '75235968','3'),
+('4', 'Quadra' ,'890', 'Chacara serrana', '76525965','4'),
+('5', 'Quadra', '888', 'Condominio Paloma', '78525198','5'),
+('6','Quadra', '25', 'Avenida Serra', '78568936','2'),
+('7',' Quadra', '25', 'Avenida Serra', '78568936','2'),
+('8',' Quadra', '34',' Rua claro', '78529362','1'),
+('9',' Quadra', '67',' Chacara torres', '58426697','4'),
+('10', 'Quadra', '98', 'Edificio Mel', '79852639','6'),
+('11', 'Quadra', '22', 'Edificio Bela', '78965523','6'),
+('12', 'Quadra','35', 'Condominio Santos', '75298987','5'),
+('13', 'Quadra', '55',' Alameda Gomes', '75298952','3'),
+('14', 'Quadra','98', 'Chacara Esperanca', '75829523','4'),
+('15', 'Quadra', '564',' Condominio Palmas', '75842825', '5'),
+('16', 'Quadra', '871', 'Avenida Roma', 78542852, '2'),
+('17',' Quadra', '307', 'Rua Mana', '78521523','1'),
+('18', 'Quadra', '657', ' Rua Live', '7852685','1'),
+('19',' Quadra', '123', 'Condominio Santiago', '78523586','5'),
+('20', 'Quadra', '458', 'Condominio Sementes', '78596985', '5');
+
+SELECT*FROM endereco;
+
+
+
+USE db_faculdade3;
+INSERT INTO telefone
+(cod_telefone, num_telefone, fk_cod_tipo)
+VALUES
+('1', '325644521', '1'),
+('2', '658967895', '2'),
+('3', '365245623', '3'),
+('4', '352645324', '1'),
+('5', '325648561', '2'),
+('6', '236574521', '3'),
+('7', '256348596', '1'),
+('8', '256987854','2'),
+('9', '125679125', '3'),
+('10', '58964135', '1'),
+('11', '325672541', '2'),
+('12', '658967895', '3'),
+('13', '658967895', '1'),
+('14', '658967895' , '2'),
+('15', '125987854', '3'),
+('16', '895342597', '1'),
+('17', '259873657', '2'),
+('18', '658967895' , '3'),
+('19', '297684921', '1'),
+('20', '298536715', '2');
+SELECT*FROM telefone;
+
+
+
+Use db_faculdade3;
+INSERT INTO professor
+( nome_professor, sobrenome_professor, status, fk_cod_departamento)
+VALUES
+('Luciano', 'Lopes', '1', '5'),
+('Ala', 'Guimaraes', '1', '5'),
+('Jurema', 'Martins','0', '3'),
+( 'Emerson', 'Gomes','1', '1'),
+('Julio', 'Freitas',  '0', '2'),
+('Antonio', 'Gomes', '1', '5'),
+('Patricia',' Rondon' ,'1', '3'),
+('Leo','Lisboa','0', '1'),
+( 'Daniel', 'Silva','1', '4'),
+( 'Igor', 'Figueiredo', '1', '1');
+
+Select*From professor;
+
+
+USE db_faculdade3;
+INSERT INTO disciplina
+ (nome_disciplina, carga_horaria, descricao, num_alunos, fk_cod_departamento)
+VALUES
+('Rac logico', '80', 'matematica', '2', '2'),
+('Psic Cognitiva', '60', 'intel humana', '1', '3'),
+('Elet Digital', '50', 'circuitos', '3', '5'),
+('Prog em c', '120', 'tecnologia', '2', '5'),
+('Cienc humana', '80', 'Historia', '2', '1'),
+('Eletromag', '20', 'eletromag', '3', '5'),
+('Psicol', '60', 'Infantil', '3', '3'),
+('Ingles', '120', 'ingles', '2', '1'),
+('musica', '50', 'musicalizacao', '2', '4'),
+('Educ Fisica', '60', 'esporte', '1', '1'),
+('Anali de soft', '50', 'Analise', '2','5'),
+('Banc de Dad', '180', 'SQL', '2', '5'),
+('Bio Celular', '50', 'Celulas', '1', '3'),
+('Hist Med', '30', 'Medieval', '3', '1'),
+('Calc I', '90', 'calculos', '2', '2'),
+('Cont Dinam', '20', 'Controle', '4', '5'),
+('Teo Comp.', '100', 'Comport', '2', '3'),
+('Leit  Escr', '40', 'ingles', '3', '1'),
+('Animc Dig', '10', 'Animacao', '1', '4'),
+('Estud Lazer', '20', 'Pratica', '2', '1'),
+('Evol  Soft', '90', 'Conhecimento', '3', '5'),
+('Aplic web', '40', 'Informatica', '2', '5'),
+('Bioq', '80', ' Quimica', '1', '3'),
+('Hist Bra', '60', 'Colonia', '3', '1'),
+('Des Geomet', '20', 'Geometria', '6', '2'),
+('OPT ML', '50', 'Producao otimiz', '1', '5'),
+('Orient Vocac', '20', 'Orientacao', '3', '3'),
+('Gramat', '30', 'vocabulario', '2', '1'),
+('Arte Contemp', '40', 'Artes', '1', '4'),
+('Inicio Danca', '50', 'movimento', '2', '1');
+
+SELECT *FROM disciplina;
+
+
+
+USE db_faculdade3;
+ INSERT INTO  professor_disciplina
+(fk_cod_professor, fk_cod_disciplina)
+VALUES   
+('5', '211'),
+('3','212'),
+('2', '213'),
+('1', '214'),
+('4', '215'),
+('6', '216'),
+('7','217'),
+('8','218'),
+('9', '219'),
+('10', '220'),
+('1', '221'),
+('2', '222'),
+('3', '223'),
+('4', '224'),
+('5', '225'),
+('6', '226'),
+('7', '227'),
+('8', '228'),
+('9', '229'),
+('10', '230'),
+('1', '231'),
+('2', '232'),
+('3', '233'),
+('4', '234'),
+('5','235'),
+('6', '236'),
+('7', '237'),
+('8','238'),
+('9', '239'),
+('10', '240');
+ 
+ SELECT*FROM professor_disciplina;
+
+
+ Use db_faculdade3;
+
+INSERT INTO aluno
+(nome_aluno, sobrenome_aluno, CPF, status, sexo, nome_pai, nome_mae, email, whatsapp, fk_cod_curso, fk_cod_turma, fk_cod_endereco)
+VALUE
+( 'Joao', 'oliveira', '12526525812','1', 'M', 'Antonio', 'Maria', 'jo@hotmail.com', '965422585', '1', '10','1'),
+( 'Ester', 'Souza', '25632515489', '0', 'F', 'Cassio', 'Sirley', 'est@hotmail.com', '965826576', NULL ,NULL, '2'),
+( 'Geovana', 'Fernandes', '32564852198','1', 'F', 'Roberto', 'Cassia', 'na19@live.com','965842536','3', '13', '3'),
+('Gustavo', 'Queiroz', '85415296575', '1', 'M' ,'Ronaldo', 'Luanna', 'gu@gmail.com','93521452', '4', '9', '4'),
+('Iolanda', 'Lima', '54698215712', '0','F', 'Juvenal', 'Amanda', 'Iol5@hotmail.com', '991254851', NULL, NULL, '5'),
+('Bete','Pereira', '58436536817','1', 'F', 'Claudio', 'Sarah', 'be@live.com','968521473', '5', '11', '6'), 
+('Sonia', 'Silva', '45682367112', '1', 'F', 'Italo', 'Cleia', 'son@hotmail.com', '958623487', '6', '14', '7'),
+('Beto', 'Fernandes', '45672985212', '1', 'M', 'Jefte', 'Sarai', 'beto@live.com', NULL, '7', '14', '8'),
+('Bianca', 'Vasconcelos', '35895246974', '1', 'M', 'Jonas', 'Cleuza', 'bia140@gmail.com', '9965821452', '8', '10', '9');
+
+SELECT*FROM aluno;
+
+
+Use db_faculdade3;
+
+INSERT INTO aluno
+(nome_aluno, sobrenome_aluno, CPF, status, sexo, nome_pai, nome_mae, email, whatsapp, fk_cod_curso, fk_cod_turma, fk_cod_endereco)
+VALUES
+
+('Antonia', 'Farias', '25635789412', '1', 'F', 'Carlos', 'Marta', 'af@live.com', '945827285', '9', '14', '10'),
+('Leonardo', 'Souza', '36982519725', '1', 'M', 'Jose', 'Fernanda', 'Le@live.com', NULL, '10', '16', '11'),
+('Agata', 'Alves', '36849579125', '1', 'F', 'Clayton', 'Karol', 'ag@live.com', '985256479', '1', '11', '12'),
+('Silvia', 'Barros', '95475638285', '1', 'F', 'Donizete', 'Camila', 'silv@live.com', '943985242', '7', '15', '13'),
+('Debora', 'Batista', '29745983425', '1', 'F', 'Caetano', 'Zulma', 'deb@gmail.com', '958621795', '6', '12', '14'),
+('Fabiano', 'Borges', '29547629852', '1', 'M', 'Alberto', 'Fabia', 'fab@live.com', '952683369', '2', '10', '15'); 
+
+SELECT*FROM aluno;
+
+
+Use db_faculdade3;
+
+INSERT INTO aluno
+(nome_aluno, sobrenome_aluno, CPF, status, sexo, nome_pai, nome_mae, email, whatsapp, fk_cod_curso, fk_cod_turma, fk_cod_endereco)
+VALUES
+('Zacarias', 'Campos', '96325874152', '0', 'M', 'Leonardo', 'Zulmira', 'za@live.com', '925634985', NULL, NULL, '16'),
+('Rute', 'Almeida', '36925873412', '1', 'F', 'Ana', 'Malaquias', 'rut@gmail.com', '958624535', '1', '14', '17'),
+('Luciana', 'Rodrigues', '59873512845', '1', 'F', 'Mateus', 'Gustava', 'lu@gmail.com', '985254971', '10', '9', '18'),
+('Laura', 'Gomes', '35982573412', '1', 'F', 'Fernando', 'Cintia', 'la@gmail.com', '958624852', '5', '12', '19'),
+('Cynthia', 'Montez', '95135725845', '1', 'F', 'Sofonias', 'Adrielli', 'cy@gmail.com', '996524892', '4', '9', '20');   
+
+
+SELECT*fROM aluno;
+
+
+USE db_faculdade3;
+INSERT INTO historico
+(dt_inicio, dt_fim, fk_RA)
+VALUES
+('2022-01-06', '2022-11-05','859'),
+('2020-05-08', '2021-05-06', '860'),
+('2018-05-05', '2019-06-20', '861'),
+('2019-10-05', '2020-05-10', '862'),
+('2015-05-08', '2018-05-20', '863'),
+('2018-07-10', '2020-05-14', '864'),
+('2014-05-05', '2016-05-29', '865'),
+('2013-07-22', '2015-07-25', '866'),
+('2006-05-01', '2007-01-03', '867'),
+('1998-02-08', '2000-08-19', '879'),
+('1995-05-04', '1997-02-09', '880'),
+('2000-02-12', '2002-08-10', '881'),
+('1993-02-09', '1994-08-25', '882'),
+('2001-08-12', '2003-05-18', '883'),
+('2005-05-11', '2007-02-15', '884'),
+('1997-06-05', '1999-02-06', '915'),
+('2020-05-02', '2022-05-03', '916'),
+('2022-01-09', '2023-08-23', '917'),
+('2022-05-12', '2023-01-15', '918'),
+('2000-01-01', '2003-03-05', '919');
+
+SELECT*FROM historico;
+
+
+USE db_faculdade3;
+INSERT INTO disciplina_historico
+(fk_cod_historico, fk_cod_disciplina, nota, frequencia)
+
+VALUES
+('1', '211',' 6.5', '50'),
+('2', '212', '7.5', '70'),
+('3', '213', '8.3', '75'),
+('4', '214', '9.0', '85'),
+('5', '215', '10.0', '95'),
+('6', '216', '7.5', '65'),
+('7', '217', '8.7', '90'),
+('8', '218', '9.5', '98'),
+( '9', '219', '9.8', '95'),
+('10', '220', '7.0', '70'),                       
+( '11', '221', '8.3', '75'),                
+( '12', '222', '9.5', '90'),            
+('13', '223', '8.9', '85'),                     
+('14', '224', '9.0', '80'),              
+('15', '225', '9.5', '95'),          
+('16', '226', '9.8', '80'),
+('17', '227', '9.0', '95'),
+('18', '228', '8.9', '85'),
+('19', '229', '8.5', '80'),
+('20', '230', '9.0', '90'),
+('1', '231', '8.5', '80'),
+('2', '232', '9.5', '90'),
+('3', '233', '9.0', '85'),
+('4', '234', '7.5', '80'),
+('5', '235', '10.0', '95'),
+('6', '236', '8.9', '75'),
+('7', '237', '9.0', '90'),
+('8', '238', '10.0', '100'),
+('9', '239', '9.5', '90'),
+('10', '240', '8.5', '85');
+
+SELECT*FROM disciplina_historico;
+
+
+USE db_faculdade3;
+INSERT INTO curso_disciplina
+(fk_cod_curso, fk_cod_disciplina)
+VALUES
+('1','211'),
+('2', '212'),
+('3','213'),
+('4', '214'),
+('5', '215'),
+('6', '216'),
+('7', '217'),
+('8', '218'),
+('9', '219'),
+('10', '220'),
+('1', '221'),
+('2', '222'),
+('3', '223'),
+('4', '224'),
+('5', '225'),
+('6', '226'),
+('7', '227'),
+('8', '228'),
+('9', '229'),
+('10', '230'),
+('1', '231'),
+('2', '232'),
+('3', '233'),
+('4', '234'),
+('5', '235'),
+('6', '236'),
+('7', '237'),
+('8', '238'),
+('9', '239'),
+('10', '240');
+
+SELECT * FROM curso_disciplina;
+
+
+USE db_faculdade3;
+
+INSERT INTO aluno_disciplina
+(fk_RA, fk_cod_disciplina)
+VALUES
+('859', '211'),
+('860', '212'),
+('861', '213'),
+('862','214'),
+('863','215'),
+('864','216'),
+('865', '217'),
+('866', '218'),
+('867', '219'),
+('879', '220'),
+('880', '221'),
+('881', '222'),
+('882','223'),
+('883', '224'),
+('884', '225'),
+('915', '226'),
+('916', '227'),
+('917', '228'),
+('918', '229'),
+('919', '230'),
+('859', '231'),
+('860', '232'),
+('861', '233'),
+('862', '234'),
+('863', '235'),
+('864', '236'),
+('865', '237'),
+('866', '238'),
+('867', '239'),
+('879', '240');
+
+SELECT*FROM aluno_disciplina;
+
+
+USE db_faculdade3;
+INSERT INTO telefone_aluno
+(fk_RA, fk_cod_telefone)
+VALUES
+('1','1','2','3'),
+( '2', '2'),
+('4', '1'),
+('5', '1', '2', '3'),
+( '6','1'),
+('7', '1'),
+('9', '1','2','3'),
+('11', '1'),
+('12','2'),
+('13', '2'),
+('14', '2'),
+('16', '1'),
+('17', '1'),
+('18','2'),
+( '19','1'),
+('20', '1');
+SELECT *FROM telefone_aluno;
